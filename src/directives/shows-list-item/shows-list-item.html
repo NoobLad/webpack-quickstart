@@ -1,0 +1,8 @@
+<article class="row">
+    <image ng-src="{{vm.show.image.medium}}" class="col-xs-3"></image>
+    <div class="col-xs-9">
+        <h1>{{vm.show.name}}</h1>
+        <p ng-show="vm.summaryRevealed" ng-bind-html="vm.show.summary"></p>
+        <a ng-click="vm.revealSummary()" ng-hide="vm.summaryRevealed">Reveal Summary</a>
+    </div>
+</article>

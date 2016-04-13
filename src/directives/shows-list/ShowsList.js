@@ -14,10 +14,6 @@ module.exports = function () {
                     console.log(shows);
                     vm.shows = shows;
                 });
-            
-            vm.revealSummary = function(show) {
-                show.summaryRevealed = true;
-            };
         }
     }
 };

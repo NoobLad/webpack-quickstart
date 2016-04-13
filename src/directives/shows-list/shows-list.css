@@ -1,8 +1,3 @@
-shows-list article {
-    margin: 10px;
-    border: 1px solid blue;
-}
-
-shows-list article h1 {
-    font-size: 1.1rem;
+shows-list {
+    padding: 10px;
 }

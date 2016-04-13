@@ -12,8 +12,19 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.css$/, loader: extractCSS.extract(['css-loader']) },
-            { test: /\.html$/, loader: 'html-loader' }
+            {
+                test: /\.css$/,
+                loader: extractCSS.extract(['css-loader'])
+            },
+            {
+                test: /\.html$/,
+                loader: 'html-loader' },
+            {
+                test: /\.(jpe?g|png|gif|svg|eot|woff2?|ttf)$/i,
+                loaders: [
+                    'file?name=[path][name]-[hash].[ext]'
+                ]
+            }
         ]
     },
     plugins: [
