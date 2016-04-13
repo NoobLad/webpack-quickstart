@@ -1,0 +1,10 @@
+<div>
+
+    <article ng-repeat="show in vm.shows track by show.id">
+        <image ng-src="show.image.medium"></image>
+        {{show.image-medium | json}}
+        <h1>{{show.name}}</h1>
+        <p ng-show="show.summaryRevealed">{{show.summary}}</p>
+        <a ng-click="vm.revealSummary(show)" ng-hide="show.summaryRevealed">Reveal Summary</a>
+    </article>
+</div>
