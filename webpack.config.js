@@ -1,36 +1,12 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var config = require('./webpack.common.config');
+var webpack = require('webpack');
 
-var extractCSS = new ExtractTextPlugin('styles/styles.css');
+config.plugins = [
+    new webpack.DefinePlugin({
+        PROD: false
+    })
+].concat(config.plugins);
 
-module.exports = {
-    context: __dirname + "/src",
-    entry: './app.js',
-    output: {
-        path: __dirname + "/dist",
-        filename: "bundle.js"
-    },
-    module: {
-        loaders: [
-            {
-                test: /\.css$/,
-                loader: extractCSS.extract(['css-loader'])
-            },
-            {
-                test: /\.html$/,
-                loader: 'html-loader' },
-            {
-                test: /\.(jpe?g|png|gif|svg|eot|woff2?|ttf)$/i,
-                loaders: [
-                    'file?name=[path][name]-[hash].[ext]'
-                ]
-            }
-        ]
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: __dirname + "/src/index.html"
-        }),
-        extractCSS
-    ]
-};
+config.devtool = "#source-map";
+
+module.exports = config;

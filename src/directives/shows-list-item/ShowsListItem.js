@@ -1,4 +1,4 @@
-require('./show-list-item.css');
+import styles from './show-list-item.css';
 
 module.exports = function () {
     return {
@@ -8,12 +8,15 @@ module.exports = function () {
         },
         controllerAs: "vm",
         template: require('./shows-list-item.html'),
-        controller: function() {
-            var vm = this;
-
-            vm.revealSummary = function() {
-                vm.summaryRevealed = true;
-            };
-        }
-    }
+        controller: ShowsListItem
+    };
 };
+
+class ShowsListItem {
+    revealSummary() {
+        this.summaryRevealed = true;
+    }
+    get styles() {
+        return styles;
+    }
+}

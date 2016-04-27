@@ -1,8 +1,8 @@
-shows-list-item article {
+.shows-list-item {
     margin: 10px;
     border: 1px solid blue;
 }
 
-shows-list-item article h1 {
+.shows-list-item h1 {
     font-size: 1.1rem;
 }
